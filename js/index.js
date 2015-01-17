@@ -78,6 +78,7 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
         }); */
 		  navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI,
+				saveToPhotoAlbum: true,
 			targetWidth : 500,
 			targetHeight : 500 
         });
