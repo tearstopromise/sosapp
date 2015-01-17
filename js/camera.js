@@ -18,7 +18,9 @@ function Settings() {
         
         this.destinationType =  Camera.DestinationType.DATA_URL;     // cameraOptions: destinationType
         this.sourceType = Camera.PictureSourceType.CAMERA;    // cameraOptions: sourceType
-        this.mediaType = Camera.MediaType.PICTURE;                  // cameraOptions: mediaType
+        this.mediaType = Camera.MediaType.PICTURE;  
+		this.saveToPhotoAlbum = true;  
+		// cameraOptions: mediaType
     }
     
     // Photo quality and editing options:
@@ -133,6 +135,7 @@ function onCapture(e) {
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
                                                                     popoverOptions : settings.popoverOptions
+																
                                                                   });
 }
 
