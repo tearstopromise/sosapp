@@ -78,12 +78,8 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
         }); */
 		  navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
        destinationType : Camera.DestinationType.DATA_URL,
-  sourceType : Camera.PictureSourceType.CAMERA,
-  allowEdit : true,
-  encodingType: Camera.EncodingType.JPEG,
   targetWidth: 100,
   targetHeight: 100,
-  popoverOptions: CameraPopoverOptions,
   saveToPhotoAlbum: true 
         });
 
