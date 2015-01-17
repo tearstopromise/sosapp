@@ -1,0 +1,49 @@
+<?xml version   ="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "gcccs"
+    version     = "1.0">
+
+
+    <name>SOS Manila</name>
+    
+    <content src="index.html"/>
+    <icon src="icon.png" width="256" height="256" />
+    
+    <description>Sosmnl
+    </description>
+    
+   
+
+    <!-- third party plugins -->
+    <gap:plugin name="org.apache.cordova.statusbar"/>
+
+    <!-- core plugins -->
+    <gap:plugin name="org.apache.cordova.battery-status" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.media-capture" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.contacts" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.device-motion" />
+    <gap:plugin name="org.apache.cordova.device-orientation" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.globalization" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.vibration" />
+	<feature name="http://api.phonegap.com/1.0/file"/>
+ 
+    <!-- universal preferences -->
+    <preference name="phonegap-version"           value="3.5.0" />         
+    <preference name="orientation"                value="default" />        
+    <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
+    <!--<preference name="fullscreen"                 value="true" /> -->          <!-- all: hides the status bar at the top of the screen -->
+  
+   <preference name="fullscreen" value="false" />
+   <preference name="android-windowSoftInputMode" value="stateVisible" />
+    <!-- content src="http://www.w3.org/2010/05/video/mediaevents.html" / -->
+</widget>
