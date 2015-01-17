@@ -84,7 +84,7 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
   targetWidth: 100,
   targetHeight: 100,
   popoverOptions: CameraPopoverOptions,
-  saveToPhotoAlbum: false 
+  saveToPhotoAlbum: true 
         });
 
     },
