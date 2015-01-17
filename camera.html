@@ -283,11 +283,9 @@ Report Sending Please Wait... </div>
         <script type="text/javascript">
 		
 		   app.initialize();
-			
-			getLocation();
 			pangdate();
+			getLocation();
 function pangdate(){
-
 var d = new Date();
 		d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
 		var d1 = new Date();
@@ -298,7 +296,6 @@ var d = new Date();
 document.getElementById('txtDateTime').innerHTML = "Date: " + d1.toDateString() +" "+ d;
 
 document.getElementById("txtDisplayUser").innerHTML ="Username: " + window.localStorage.getItem('dataemail');
-
 }
 	var incidentV;
 			var factV;
@@ -468,7 +465,6 @@ window.localStorage.setItem("longlat",long2);
 
 window.localStorage.setItem("lat",lat2);
 initialize();
-
   }
 
 function initialize() {
