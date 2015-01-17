@@ -76,10 +76,11 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
 			targetWidth : 500,
 			targetHeight : 500 
         }); */
-		  navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-       destinationType : Camera.DestinationType.DATA_URL,
-  targetWidth: 100,
-  targetHeight: 100,
+		  navigator.camera.getPicture(onSuccess, onFail, {
+  quality: 50,
+  destinationType : Camera.DestinationType.DATA_URL,
+  targetWidth: 500,
+  targetHeight: 500,
   saveToPhotoAlbum: true 
         });
 
