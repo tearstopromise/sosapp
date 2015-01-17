@@ -59,10 +59,7 @@ var app = {
 
         function onSuccess(imageData) {
 			
-			destinationType: Camera.DestinationType.FILE_URI,
-			saveToPhotoAlbum: true,
-			targetWidth : 500,
-			targetHeight : 500 
+	
 			
 			
                 document.getElementById("info").innerHTML = "success";
@@ -71,6 +68,11 @@ var app = {
     document.getElementById("picc").src = "data:image/jpeg;base64," +  imageData;
 document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;    
 	skip2 += 1;
+	
+			destinationType: Camera.DestinationType.FILE_URI,
+			saveToPhotoAlbum: true,
+			targetWidth : 500,
+			targetHeight : 500 
    }
 
         function onFail(message) {
