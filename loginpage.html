@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1.0, width=device-width">
+	<link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />
+	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+	<script src="js/jquery.ui.datepicker.js"></script>
+	<script src="js/jquery.mobile.datepicker.js"></script>
+<script>
+	function animatelogo(){
+		$('#myLogo').addClass('animated bounceInLeft');
+		
+	}
+</script>
+
+<style>
+	div#loginemailicon {
+    position:relative;
+    
+}
+
+
+img#imgemailicon{
+    position:absolute;
+    right:5px;
+    top:4px;
+}
+
+div#loginpasswordicon {
+    position:relative;
+    
+}
+
+
+img#imgpasswordicon{
+    position:absolute;
+    right:5px;
+    top:4px;
+}
+	</style>	
+</head>
+<body  onLoad="animatelogo()">
+	<div data-role="page" id="loginpage" data-theme="a" >
+			<div data-role="header" data-theme="f">
+			<img src="images/logo-small.png" id="myLogo" style="width:70%;margin-left:auto;margin-right:auto;display:block">
+			</div>
+			<div role="main" class="ui-content">
+			<!--<div style="margin-left:auto;margin-right:auto;display:block;width:300px;">-->
+			
+			<script type="text/javascript" src="js/jquery.validate.js"></script>
+			
+			<form id="loginform" action="javascript:verifyfirst()">
+				<div id="loginemailicon">
+				<input type="text" name="txtLusername" id="txtLusername" placeholder="Email">
+				<img id="imgemailicon" src="images/icon-user.png" width="4%" />
+				</div>
+					<small id="errortxtLusername" style="color:#ff0000;display:block"></small>
+				
+				<div id="loginpasswordicon">
+				<input type="password" name="txtLpass" id="txtLpass" placeholder="Password">
+				<img id="imgpasswordicon" src="images/icon-password.png" width="4%" />
+				</div>
+					<small id="errortxtLpass" style="color:#ff0000;display:block"></small>
+				<input type="submit" value="Log In" id="btnlogin" data-theme="d" >
+			</form>
+				<a href="register.html" data-transition="fade" data-role="button" data-theme="d">Register</a>
+			<!--</div>-->
+			
+			</div>
+			<div data-role="popup" id="popupAfter" data-theme="d"  style="width:300px">
+			
+			<p id="popuptext"></p>
+			</div>
+			<script>
+			var lform = $("#loginform");
+			
+			lform.validate({
+					errorPlacement: function ($error, $element) {
+						var name = $element.attr("name");
+						$("#error" + name).html($error);
+					},
+					rules: {
+						txtLusername: {
+							required: true,
+							minlength: 1
+						},
+						txtLpass: {
+							required: true,
+							minlength: 1
+						},
+					},
+					messages: {
+						txtLusername: {
+							required: "Please enter your Email"
+						},
+						txtLpass: {
+							required: "Please provide a Password"
+						},
+					
+					}
+			});
+			
+			
+			function verifyfirst(){
+			if($( "#txtLusername" ).val() == "" || $( "#txtLpass" ).val() == "")
+			{
+			return;
+			}
+			$.mobile.loading("show");
+			
+				$.getJSON("http://iligtas.ph/sosmnl/verifyfirst.php?callback=?", lform.serialize(),function(data)
+				{
+					if (data.verified == "v1")
+					{
+					localStorage.setItem("datausername", data.username);
+					localStorage.setItem("dataemail", data.email);
+					$.mobile.changePage( "index.html", { changeHash: true });
+					}
+					else
+					{
+					$("#popuptext").html("<b>The account you've entered is not associated with i@ATA. Please check your username or password.</b>");	
+					$( "#popupAfter" ).popup();
+					$( "#popupAfter" ).popup( "open", { 
+					positionTo: "window",
+					transition: "pop" });
+					$.mobile.loading("hide");
+					}
+				}).fail(function(data){
+				
+					$("#popuptext").html("<b>There is a problem with your login, please try again later.</b>");
+						$( "#popupAfter" ).popup();
+						$( "#popupAfter" ).popup( "open", { 
+						positionTo: "window",
+						transition: "pop"});
+						$.mobile.loading("hide");
+					
+				});
+			}
+		</script>
+	</div>
+</body>
+</html>
