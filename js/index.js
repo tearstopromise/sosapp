@@ -72,10 +72,8 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
         }
 
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-            destinationType: Camera.DestinationType = {
-        DATA_URL : 0,                // Return image as base64 encoded string
-        FILE_URI : 1                 // Return image file URI
-    },
+            destinationType: Camera.DestinationType.DATA_URL,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
 			saveToPhotoAlbum: true,
 			targetWidth : 500,
 			targetHeight : 500 
