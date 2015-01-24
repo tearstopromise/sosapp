@@ -71,17 +71,14 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
          
         }
 
-    /*    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-            destinationType: Camera.DestinationType.DATA_URL,
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType = {
+        DATA_URL : 0,                // Return image as base64 encoded string
+        FILE_URI : 1                 // Return image file URI
+    };,
+			saveToPhotoAlbum: true,
 			targetWidth : 500,
 			targetHeight : 500 
-        }); */
-		  navigator.camera.getPicture(onSuccess, onFail, {
-  quality: 50,
-  destinationType : Camera.DestinationType.DATA_URL,
-  targetWidth: 500,
-  targetHeight: 500,
-  saveToPhotoAlbum: true 
         });
 
     },

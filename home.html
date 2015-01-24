@@ -57,6 +57,11 @@
     height: 300px;
 	border: 1px;
   }
+  #panicbutton{
+		position: relative;
+		display: block;
+		left: 85%;
+	}
       </style>
     </head>
     <body>
@@ -71,7 +76,7 @@
 	            <li><a href="#three" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-info">Social Feeds</a></li>
 	          <li><a href="#three" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-info">Help</a></li>  
 	          
-			<li><a href="#" class="ui-btn ui-shadow ui-btn-icon-right ui-icon-action">Logout</a></li>
+			<li><a href="javascript:logoutaccount();" class="ui-btn ui-shadow ui-btn-icon-right ui-icon-action">Logout</a></li>
 			
 						
 			</ul>
@@ -417,7 +422,14 @@ document.getElementById("txtDisplayUser").innerHTML ="Username: " + window.local
 }
 
 
-
+function logoutaccount()
+	{
+	localStorage.removeItem("datausername");
+	localStorage.removeItem("dataemail");
+	
+window.location.replace("index.html");
+	// $.mobile.changePage("index.html", { transition: "fade", changeHash: true});
+	}
 
 
 
@@ -681,6 +693,14 @@ window.location.replace("#five");
 	});	
 		   
 			}
+			
+			
+			
+$(document).ready(function(){
+  $("#panicpic").click(function(){
+   $('#panicpic').fadeOut();
+  });
+});
 
 </script>
 <!-- end code ko -->
