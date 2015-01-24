@@ -75,7 +75,7 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
             destinationType: Camera.DestinationType = {
         DATA_URL : 0,                // Return image as base64 encoded string
         FILE_URI : 1                 // Return image file URI
-    };,
+    },
 			saveToPhotoAlbum: true,
 			targetWidth : 500,
 			targetHeight : 500 
