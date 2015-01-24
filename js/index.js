@@ -28,7 +28,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.getElementById('camera').addEventListener('click', this.camera, false);
-		  document.getElementById('camera2').addEventListener('click', this.camera, false);
+		  document.getElementById('camera2').addEventListener('click', this.camera2, false);
     },
     // deviceready Event Handler
     //
