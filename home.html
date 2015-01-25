@@ -74,7 +74,9 @@
 			
 	        <li data-role="list-divider" data-theme="">MENU</li>  
 	            <li><a href="#three" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-info">Social Feeds</a></li>
-	          <li><a href="#three" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-info">Help</a></li>  
+	          <li><a href="#userguide" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-info">User Guide</a></li>
+
+	          <li><a href="#myreports" onClick="reports1()" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-info">My Reports</a></li>  			  
 	          
 			<li><a href="javascript:logoutaccount();" class="ui-btn ui-shadow ui-btn-icon-right ui-icon-action">Logout</a></li>
 			
@@ -92,11 +94,12 @@
 		<a href="sms:+09461461134?body= I am in emergency situation, I need help."><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
 		</div>
 		<!--<p><a href="#two" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Personal Alarm</a></p>-->
-		From Album
-		<a   id="camera" onClick="next1();" ><img src="images/logo-small.png"  id="myLogo" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
-		Use Camera
-		<a   id="camera2" onClick="next1();" ><img src="images/logo-small.png"  id="myLogo" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
-		
+		<center>	
+			<a   id="camera2" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
+	
+		<a   id="camera" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
+		</center>
+	
 		<a id="btnCall" href="tel:09461461134" class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
 		
 		
@@ -307,6 +310,34 @@ Report Sending Please Wait... </div>
 
 
 
+<div data-role="page" id="myreports">
+
+	<div data-role="header">
+	
+		<a href="" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-notext"></a>
+	<h1>My Reports</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+   
+	   
+<center>
+<div id="reports1">
+<center>
+ <img src="images/ajax-loader.gif"  />
+  </center>
+ Loading Please Wait... </div>
+
+
+	</div><!-- /content -->
+
+	
+	<div data-role="footer" data-theme="a" data-position="fixed">
+		<h4></h4>
+	</div><!-- /footer -->
+</div><!-- /page one -->
+
 
 
 
@@ -321,12 +352,33 @@ Report Sending Please Wait... </div>
 
 	<div data-role="header">
 		<a href="" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-notext"></a>
-		<h1>Social Media Feeds</h1>
+		<h1>News Feeds</h1>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
 		
 		<div id="twitter-feed"></div>
+	</div><!-- /content -->
+
+	
+	<div data-role="footer" data-theme="a" data-position="fixed">
+		<h4></h4>
+	</div><!-- /footer -->
+</div><!-- /page one -->
+
+
+<div data-role="page" id="userguide">
+
+
+
+	<div data-role="header">
+		<a href="" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-notext"></a>
+		<h1>User Guide</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		<img src="images/construction.png" style="width:70%;margin-left:auto;margin-right:auto;display:block" />
 	</div><!-- /content -->
 
 	
@@ -699,6 +751,19 @@ window.location.replace("#five");
 			}
 			
 			
+function reports1(){
+myname = window.localStorage.getItem('dataemail');
+				$.ajax({
+					url: "http://iligtas.ph/sosmnl/myreports.php",
+					type: "POST",
+					data: {"myname":myname},
+					success:function(data){
+						$("#reports1").html(data);
+		
+	}
+	});	
+		   
+			}
 			
 $(document).ready(function(){
   $("#panicpic").click(function(){
