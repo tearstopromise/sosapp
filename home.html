@@ -41,7 +41,7 @@
 	<script type="text/javascript" src="js/twitterfeed.js"></script>
 	  
 	  
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 		 <style>
          body {
          background:#ddd;
@@ -209,6 +209,9 @@
 	<input type="text" name="txtFactsIncident" id="txtFactsIncident" placeholder="Facts of the Incident">
 
 	<input type="submit" onClick="next2();" value="Send" id="submit" data-theme="d" >
+ <br>
+ 
+ <input type="text" id="lugar" />
  
 <!-- end code ko--> 
 
@@ -413,7 +416,7 @@ Report Sending Please Wait... </div>
  <input type="hidden" id="pic1" />
  <input type="hidden" id="pic2" >
  <input type="hidden" id="pic3" />
- 
+
  <input type="hidden" id="hidlat" />
 
   <input type="hidden" id="sample" />
@@ -568,6 +571,7 @@ function updateMarkerPosition(latLng) {
 
 function updateMarkerAddress(str) {
   loc2 = str;
+    document.getElementById('lugar').value=str;
 }
 
  function getLocation()
@@ -705,9 +709,7 @@ window.location.replace("#two");
 }
 
 function next1(){
-
 window.location.replace("#two");
-
 }
 
 

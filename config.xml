@@ -36,6 +36,8 @@
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.vibration" />
  
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+ 
     <!-- universal preferences -->
     <preference name="phonegap-version"           value="3.5.0" />         
     <preference name="orientation"                value="default" />        
