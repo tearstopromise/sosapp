@@ -81,7 +81,31 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
 
     },
 	
-	
+    camera2: function() {
+
+        function onSuccess(imageData) {
+                document.getElementById("info").innerHTML = "success";
+        
+      document.getElementById("info33").innerHTML = "data:image/jpeg;base64," + imageData;
+    document.getElementById("picc").src = "data:image/jpeg;base64," +  imageData;
+document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;    
+	skip2 += 1;
+   }
+
+        function onFail(message) {
+                document.getElementById("info").innerHTML = "error";
+         
+        }
+
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
+			saveToPhotoAlbum: true,
+			targetWidth : 500,
+			targetHeight : 500 
+        });
+
+    },	
 
 
 	
