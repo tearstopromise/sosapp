@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!--
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -40,8 +39,8 @@
 	<script src="js/jquery.mobile.datepicker.js"></script>
 	<script type="text/javascript" src="js/twitterfeed.js"></script>
 	  
-	  
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+	
 		 <style>
          body {
          background:#ddd;
@@ -104,7 +103,7 @@
 		
 		<a id="btnCall" href="tel:09461461134" class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
 		
-		
+ <p id="lugar1"></p>		
 		
 		</div><!-- /content -->
 
@@ -209,10 +208,7 @@
 	<input type="text" name="txtFactsIncident" id="txtFactsIncident" placeholder="Facts of the Incident">
 
 	<input type="submit" onClick="next2();" value="Send" id="submit" data-theme="d" >
- <br>
- 
- <input type="text" id="lugar" />
- 
+
 <!-- end code ko--> 
 
 	
@@ -420,6 +416,15 @@ Report Sending Please Wait... </div>
  <input type="hidden" id="hidlat" />
 
   <input type="hidden" id="sample" />
+  <div id="infoPanel"  style="display:none;" >
+    <b>Marker status:</b>
+    <div id="markerStatus"><i>Click and drag the marker.</i></div>
+    <b>Current position:</b>
+    
+    <b>Closest matching address:</b>
+    <div id="address"></div>
+  </div>
+  
 	
 	   <div id="deviceready" class="blink">
                 <p class="event listening" style="display:none;" >Connecting to Device</p>
@@ -446,8 +451,8 @@ Report Sending Please Wait... </div>
 		
       <script src="js/jquery-1.10.2.min.js"></script>
    <script type="text/javascript">
-		
-		   app.initialize();
+getLocation();
+pangdate();
 	
 var incidentV ;
 			var factV;
@@ -466,9 +471,106 @@ var skip2 = 0;
 var sampleV;
 var Rincident ;
 
-pangdate();
-getLocation();
+var geocoder = new google.maps.Geocoder();
 
+  var gg;
+  var gg1;
+function geocodePosition(pos) {
+  geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+    if (responses && responses.length > 0) {
+      updateMarkerAddress(responses[0].formatted_address);
+    } else {
+      updateMarkerAddress('Cannot determine address at this location.');
+    }
+  });
+}
+
+function updateMarkerStatus(str) {
+  document.getElementById('markerStatus').innerHTML = str;
+}
+
+function updateMarkerPosition(latLng) {
+  document.getElementById('info2').innerHTML = [
+    latLng.lat(),
+    latLng.lng()
+  ].join(', ');
+}
+
+function updateMarkerAddress(str) {
+document.getElementById('lugar1').innerHTML = str;
+  loc2 = str;
+  
+}
+
+ function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.watchPosition(showPosition);
+    }
+  else{}
+  }
+function showPosition(position)
+  {
+	
+  gg =position.coords.latitude ;
+ gg1 =  position.coords.longitude;
+  
+  
+  long2 =position.coords.latitude;
+  lat2= position.coords.longitude;
+window.localStorage.setItem("longlat",long2);
+
+window.localStorage.setItem("lat",lat2);
+initialize();
+
+  }
+
+function initialize() {
+
+  
+  var latLng = new google.maps.LatLng(gg,gg1);
+ 
+ var map = new google.maps.Map(document.getElementById('mapCanvas'), {
+    zoom: 12,
+    center: latLng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+  var marker = new google.maps.Marker({
+    position: latLng,
+    title: 'Point A',
+    map: map,
+    draggable: true
+  });
+
+ 
+  
+  // Update current position info.
+  updateMarkerPosition(latLng);
+  geocodePosition(latLng);
+
+  // Add dragging event listeners.
+  google.maps.event.addListener(marker, 'dragstart', function() {
+    updateMarkerAddress('Dragging...');
+  });
+
+  google.maps.event.addListener(marker, 'drag', function() {
+    updateMarkerStatus('Dragging...');
+    updateMarkerPosition(marker.getPosition());
+  });
+
+  google.maps.event.addListener(marker, 'dragend', function() {
+    updateMarkerStatus('Drag ended');
+    geocodePosition(marker.getPosition());
+  });
+}
+
+
+
+
+ app.initialize();
 function pangdate(){
 
 var d = new Date();
@@ -542,100 +644,14 @@ function radio6e(){
 
 
 
-var geocoder = new google.maps.Geocoder();
 
-  var gg;
-  var gg1;
-function geocodePosition(pos) {
-  geocoder.geocode({
-    latLng: pos
-  }, function(responses) {
-    if (responses && responses.length > 0) {
-      updateMarkerAddress(responses[0].formatted_address);
-    } else {
-      updateMarkerAddress('Cannot determine address at this location.');
-    }
-  });
-}
 
-function updateMarkerStatus(str) {
-  document.getElementById('markerStatus').innerHTML = str;
-}
 
-function updateMarkerPosition(latLng) {
-  document.getElementById('info2').innerHTML = [
-    latLng.lat(),
-    latLng.lng()
-  ].join(', ');
-}
 
-function updateMarkerAddress(str) {
-  loc2 = str;
-    document.getElementById('lugar').value=str;
-}
 
- function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.watchPosition(showPosition);
-    }
-  else{}
-  }
-function showPosition(position)
-  {
-	
-  gg =position.coords.latitude ;
- gg1 =  position.coords.longitude;
-  
-  
-  long2 =position.coords.latitude;
-  lat2= position.coords.longitude;
-window.localStorage.setItem("longlat",long2);
 
-window.localStorage.setItem("lat",lat2);
-initialize();
 
-  }
 
-function initialize() {
-
-  
-  var latLng = new google.maps.LatLng(gg,gg1);
- 
- var map = new google.maps.Map(document.getElementById('mapCanvas'), {
-    zoom: 12,
-    center: latLng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
-  var marker = new google.maps.Marker({
-    position: latLng,
-    title: 'Point A',
-    map: map,
-    draggable: true
-  });
-
- 
-  
-  // Update current position info.
-  updateMarkerPosition(latLng);
-  geocodePosition(latLng);
-
-  // Add dragging event listeners.
-  google.maps.event.addListener(marker, 'dragstart', function() {
-    updateMarkerAddress('Dragging...');
-  });
-
-  google.maps.event.addListener(marker, 'drag', function() {
-    updateMarkerStatus('Dragging...');
-    updateMarkerPosition(marker.getPosition());
-  });
-
-  google.maps.event.addListener(marker, 'dragend', function() {
-    updateMarkerStatus('Drag ended');
-    geocodePosition(marker.getPosition());
-  });
-}
 
 
 
@@ -709,7 +725,9 @@ window.location.replace("#two");
 }
 
 function next1(){
+
 window.location.replace("#two");
+
 }
 
 
