@@ -102,8 +102,7 @@
 		<a   id="camera" onClick="next1();" ><img src="images/logo-small.png"  id="myLogo" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
 		
 		<a id="btnCall" href="tel:09461461134" class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
-		
- <p id="lugar1"></p>		
+		<input type="hidden" id="lugar1" />
 		
 		</div><!-- /content -->
 
@@ -499,7 +498,7 @@ function updateMarkerPosition(latLng) {
 }
 
 function updateMarkerAddress(str) {
-document.getElementById('lugar1').innerHTML = str;
+document.getElementById('lugar1').value = str;
   loc2 = str;
   
 }
@@ -541,8 +540,7 @@ function initialize() {
   var marker = new google.maps.Marker({
     position: latLng,
     title: 'Point A',
-    map: map,
-    draggable: true
+    map: map
   });
 
  
@@ -765,7 +763,7 @@ window.location.replace("#five");
 				$.ajax({
 					url: "http://iligtas.ph/sosmnl/addreport.php",
 					type: "POST",
-					data: {"txtIncident":Rincident,"txtPhotoIncident":pic,"txtDisplayUser":name55,"txtDateTime":date2,"txtTypeIncident":incidentV,"txtFactsIncident":factV,"txtlong":long2,"txtlat2":lat2},
+					data: {"txtIncident":Rincident,"txtPhotoIncident":pic,"txtDisplayUser":name55,"txtDateTime":date2,"txtTypeIncident":incidentV,"txtFactsIncident":factV,"txtlong":long2,"txtlat2":lat2,"loc2":loc2},
 					success:function(data){
 						$("#ew").html(data);
 		
