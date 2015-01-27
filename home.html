@@ -93,12 +93,17 @@
 		<a href="sms:+09461461134?body= I am in emergency situation, I need help."><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
 		</div>
 		<!--<p><a href="#two" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Personal Alarm</a></p>-->
-		<center>	
+			
+		<a    href="#both" data-rel="popup" data-transition="fade" data-position-to="window"><img src="images/logo-small.png"  id="myLogo" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
+		
+		
+		<div id="both" data-role="popup" data-theme="a" data-overlay-theme="b">
+  		<center>	
 		<a   id="camera" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
-	
 		<a   id="camera2" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
 		</center>
 
+		</div>
 	
 		<a id="btnCall" href="tel:09461461134" class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
 		<input type="hidden" id="lugar1" />
@@ -765,9 +770,9 @@ window.location.replace("#five");
 					type: "POST",
 					data: {"txtIncident":Rincident,"txtPhotoIncident":pic,"txtDisplayUser":name55,"txtDateTime":date2,"txtTypeIncident":incidentV,"txtFactsIncident":factV,"txtlong":long2,"txtlat2":lat2,"loc2":loc2},
 					success:function(data){
-						$("#ew").html(data);
-						window.plugins.toast.showLongBottom('Report Sent!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-		lipat();
+					$("#ew").html(data);
+					window.plugins.toast.showLongBottom('Incident Report Sent!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+					lipat();
 	}
 	});	
 		   
