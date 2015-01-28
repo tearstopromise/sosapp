@@ -771,7 +771,7 @@ window.location.replace("#five");
 					type: "POST",
 					data: {"txtIncident":Rincident,"txtPhotoIncident":pic,"txtDisplayUser":name55,"txtDateTime":date2,"txtTypeIncident":incidentV,"txtFactsIncident":factV,"txtlong":long2,"txtlat2":lat2,"loc2":loc2},
 					success:function(data){
-					$("#ew").html(data);
+					
 					window.plugins.toast.showLongBottom('Incident Report Sent!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 					lipat();
 	}
