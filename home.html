@@ -801,48 +801,6 @@ $(document).ready(function(){
 });
 
 
-var pushNotification;
-
-document.addEventListener("deviceready", function(){
-    pushNotification = window.plugins.pushNotification;
-   
-   
-   $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
-if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
-    pushNotification.register(
-    successHandler,
-    errorHandler,
-    {
-        "senderID":"18946022990",
-        "ecb":"onNotification"
-    });
-}  else {
-    pushNotification.register(
-    tokenHandler,
-    errorHandler,
-    {
-        "badge":"true",
-        "sound":"true",
-        "alert":"true",
-        "ecb":"onNotificationAPN"
-    });
-}
-
-// result contains any error description text returned from the plugin call
-function errorHandler (error) {
-    alert('error = ' + error);
-}
-
-
-// result contains any message sent from the plugin call
-function successHandler (result) {
-    alert('result = ' + result);
-}
-
-
-
-
-});
 
 
 </script>

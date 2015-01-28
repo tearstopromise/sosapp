@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+    
+	  
+	  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1.0, width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+      <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+      <script src="js/bootstrap.min.js"></script>
+	
+<!-- end ng code ko -->  
+	  
+	
+    
+<link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />
+	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+	<script src="js/jquery.ui.datepicker.js"></script>
+	<script src="js/jquery.mobile.datepicker.js"></script>
+	<script type="text/javascript" src="js/twitterfeed.js"></script>
+	  
+	  
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		 <style>
+         body {
+         background:#ddd;
+         }
+		 #mapCanvas {
+    width: 150px;
+    height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  	 .pic{
+    width: 300px;
+    height: 300px;
+	border: 1px;
+  }
+      </style>
+    </head>
+    <body>
+	
+	<div data-role="header">
+		<a href="" onClick="lipatback();" class="ui-btn ui-icon-back ui-btn-icon-notext"></a><h1>Report Incident </h1> <a href="" onClick="lipat();" class="ui-btn ui-icon-home ui-btn-icon-notext
+		
+		"></a>
+	</div><!-- /header -->
+			
+	<div class="container">
+	
+         <div style="max-width:640px;margin-left:auto;margin-right:auto;">
+			
+	<div id="div1">
+	<div class="panel panel-success"  style="color:black " id="main">
+				  <div class="panel-body "  >
+		
+<div id="txtDisplayUser" ></div><div id="txtDateTime"></div>		
+            <div id="deviceready" style="display:none;" class="blink">
+                <p class="event listening" style="display:none;" >Connecting to Device</p>
+                <p class="event received" style=" display:none;">Device is Ready</p>
+            </div>
+		<br><br>	
+ 
+         <a  onClick="next1();"  id="camera" >  <img  src="images/picture12.png" id=""   style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block" />	</a>
+			<br>
+				<input type="submit" onClick="skip1();" value="SKIP" id="submit" data-theme="d" >
+   
+			<br><br>
+          
+            <p id="info2" style="display:none;"></p>
+			 <p id="info33" style="display:none;"></p>
+			    <p id="info" style="display:none;"></p>
+            </div></div></div>
+			
+			
+			<div id="div2" style="display:none;" >
+		<div class="panel panel-success"  style="color:black " id="main">
+				  <div class="panel-body "  >
+				  
+				             
+<table border="0"  style=" width:100%;  height:100%; margin-left: auto;  size:cover; margin-right: auto;">
+<tr>
+<td >	<img src="" id="picc"  class="pic" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"   />	
+</td>
+
+</tr>
+</table>
+
+<br>
+  <input type="hidden" id="sample" />
+	<!--<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">-->
+	<legend>Choose an Incident:</legend>
+		<input onClick="radio6a();" type="radio" name="txtIncident" id="radio-choice-h-6a" value="disaster">
+			<label for="radio-choice-h-6a">Disaster</label>
+		<input onClick="radio6b();" type="radio" name="txtIncident" id="radio-choice-h-6b" value="accident">
+			<label for="radio-choice-h-6b">Accident</label>
+		<input onClick="radio6c();" type="radio" name="txtIncident" id="radio-choice-h-6c" value="crime">
+			<label for="radio-choice-h-6c">Crime</label>
+		<input onClick="radio6d();" type="radio" name="txtIncident" id="radio-choice-h-6d" value="medical">
+			<label for="radio-choice-h-6d">Medical</label>
+		<input onClick="radio6e();" type="radio" name="txtIncident" id="radio-choice-h-6e" value="other">
+			<label for="radio-choice-h-6e">Other</label>
+	<!--</fieldset>-->
+
+	<div id="divSelectDisaster" onClick="sample();" style="display:none;" >
+	<select  name="txtTypeIncident" id="txtTypeIncidentDisaster2" data-native-menu="false">
+	    <option >Select Disaster Type</option>
+	    <option value="CBRN">CBRN</option>
+	    <option value="Explosion">Explosion</option>
+	    <option  value="Fire">Fire</option>
+	    <option  value="Flooding">Flooding</option>
+		<option  value="Others">Others</option>
+		<option   value="Mitigate">Mitigate</option>
+	</select>
+	</div>
+	
+	<div id="divSelectCrime" onClick="sample2();" style="display:none;" >
+	<select name="txtTypeIncident" id="txtTypeIncidentCrime" data-native-menu="false">
+	    <option>Select Crime Type</option>
+		<option value="Abuse">Abuse</option>
+	    <option value="Carjacking">Carjacking</option>
+	    <option value="Carnapping">Carnapping</option>
+		<option value="GunShot">Gun Shot</option>
+	    <option value="Homicide">Homicide</option>
+		<option value="IllegalDrugTrade">Illegal Drug Trade</option>
+	    <option value="Murder">Murder</option>
+		<option value="PhysicalInjury">Physical Injury</option>
+		<option value="Rape">Rape</option>
+		<option value="Robbery">Robbery</option>
+		<option value="Theft">Theft</option>
+	</select>
+	</div>
+
+	<div id="divSelectAccident" onClick="sample3();" style="display:none;" >
+	<select name="txtTypeIncident" id="txtTypeIncidentAccident" data-native-menu="false">
+	    <option> Select Accident Type</option>
+	    <option value="Car Accident">Car Accident</option>
+	    <option value="Motorcycle Accident">Motorcycle Accident</option>
+	    <option value="Others">Others</option>
+	</select>
+	</div>
+
+	<div id="divSelectMedicalAssistance" onClick="sample4();" style="display:none;">
+	<select name="txtTypeIncident" id="txtTypeIncidentMedicalAssistance" data-native-menu="false">
+	    <option>Select Med Assist Type</option>
+	    <option value="Asthma">Asthma</option>
+	    <option value="BrokenBone">Broken Bone</option>
+	    <option value="Dengue">Dengue</option>
+	<option value="EmergencyChildbirth">Emergency Childbirth</option>
+	<option value="HeartAttack">Heart Attack</option>
+	<option value="Poisoning">Poisoning</option>
+	<option value="Others">Others</option>
+	</select>
+	</div>
+	
+	
+	<input type="text" onchange="sample5();" name="txtother" id="txtother" style="display:none;"  placeholder="Other">
+
+	<input type="text" name="txtFactsIncident" id="txtFactsIncident" placeholder="Facts of the Incident">
+
+	<input type="submit" onClick="next2();" value="Send" id="submit" data-theme="d" >
+          
+            </div></div></div>
+			
+			
+			
+			<div id="div3" style="display:none;" >
+		<div class="panel panel-success"  style="color:black " id="main">
+                 <center> <div class="panel-heading"><div class="text-center" style="font-size:1.8em">Report Summary</div></div> </center>
+				  <div class="panel-body "  >
+	<br>	
+
+	
+
+<br>       
+<center>
+
+<div>  
+		
+             	
+<table border="0"  style="  margin-left: auto;  margin-right: auto;">
+<tr>
+<td>	 <img src="" class="pic" id="picc1" border="1"  style="margin-left: auto; width:100%;  margin-right: auto;"  />	
+</td>
+
+<td ><div id="mapCanvas"     ></div>
+</td>
+</tr>
+</table>
+		
+<p id="pdate">	Date: </p>
+<p id="pname">	By: </p>
+<p id="pRincedent"> Incedent: </p>
+<p id="pincedent">	Type of Incedent: </p>
+<p id="pfact"> fact:</p>
+ <br> 
+          
+	<input type="button" onClick="next3();" value="Send" id="submit" data-theme="d" >
+</div>
+</center>
+
+<div id="mapCanvas"  ></div>
+  <div id="infoPanel"  style="display:none;" >
+    <b>Marker status:</b>
+    <div id="markerStatus"><i>Click and drag the marker.</i></div>
+    <b>Current position:</b>
+    
+    <b>Closest matching address:</b>
+    <div id="address"></div>
+  </div>
+  
+ <br>
+         
+            </div></div></div>
+			
+			
+			
+			<div id="div4" style="display:none;" >
+		<div class="panel panel-success"  style="color:black " id="main">
+                  <center><div class="panel-heading"><div class="text-center" style="font-size:1.8em">Sending Please Wait</div></div> </center>
+				  <div class="panel-body "  >
+	<br>	
+	
+<input type="hidden" id="asar">
+ <input type="hidden" id="pic1" />
+ <input type="hidden" id="pic2" >
+ <input type="hidden" id="pic3" />
+ 
+ <input type="hidden" id="hidlat" />
+
+  
+  
+<center>
+<div id="ew">
+<center>
+ <img src="images/ajax-loader.gif"  />
+  </center>
+Report Sending Please Wait... </div>
+
+
+ </center>
+ <br>
+            </div></div></div>
+			
+			
+			
+			
+			
+        </div>
+		 </div>
+		 
+       
+		
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="childbrowser.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		
+      <script src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+		
+		   app.initialize();
+			
+			getLocation();
+			pangdate();
+function pangdate(){
+
+var d = new Date();
+		d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
+		var d1 = new Date();
+		
+		 document.getElementById("pdate").innerHTML ="Date: " + d1.toDateString() +" "+ d;
+		 date2 =  d1.toDateString() +" "+ d;
+
+document.getElementById('txtDateTime').innerHTML = "Date: " + d1.toDateString() +" "+ d;
+
+document.getElementById("txtDisplayUser").innerHTML ="Username: " + window.localStorage.getItem('dataemail');
+
+}
+	var incidentV;
+			var factV;
+		
+	   var name55;
+var loc2 = "";
+var cat2 = "";
+var cat22 = "";
+var address2 ;
+var date2;
+var long2 = "";
+var lat2 = "";
+var pic1;
+var skip2 = 0;
+
+function lipat(){
+window.location.replace("home.html");
+}
+	
+function skip1(){
+	skip2 +=1;
+		   $( "#div1" ).slideToggle("fast");
+		   $( "#div2" ).slideToggle("fast");
+		    document.getElementById("info33").innerHTML = "none"
+}
+
+
+//code ng select disaster
+function radio6a(){
+		    $( "#divSelectDisaster" ).show("fast");
+		   $( "#divSelectCrime" ).hide("fast");
+		  $( "#divSelectAccident" ).hide("fast");
+		  $( "#divSelectMedicalAssistance" ).hide("fast");
+		  $( "#txtother" ).hide("fast");
+}
+function radio6b(){
+		    $( "#divSelectDisaster" ).hide("fast");
+		   $( "#divSelectCrime" ).hide("fast");
+		  $( "#divSelectAccident" ).show("fast");
+		  $( "#divSelectMedicalAssistance" ).hide("fast");
+		  $( "#txtother" ).hide("fast");
+}
+function radio6c(){
+		  $( "#divSelectDisaster" ).hide("fast");
+		   $( "#divSelectCrime" ).show("fast");
+		  $( "#divSelectAccident" ).hide("fast");
+		  $( "#divSelectMedicalAssistance" ).hide("fast");
+		  $( "#txtother" ).hide("fast");
+}
+function radio6d(){
+		  $( "#divSelectDisaster" ).hide("fast");
+		   $( "#divSelectCrime" ).hide("fast");
+		  $( "#divSelectAccident" ).hide("fast");
+		  $( "#divSelectMedicalAssistance" ).show("fast");
+		  $( "#txtother" ).hide("fast");
+}
+function radio6e(){
+		  $( "#divSelectDisaster" ).hide("fast");
+		   $( "#divSelectCrime" ).hide("fast");
+		  $( "#divSelectAccident" ).hide("fast");
+		  $( "#divSelectMedicalAssistance" ).hide("fast");
+		  
+		  $( "#txtother" ).show("fast");
+}
+
+//data ng selecttype
+var sampleV;
+var Rincident;
+function sample(){
+document.getElementById("sample").value= document.getElementById("txtTypeIncidentDisaster2").value;
+sampleV = 1;
+}
+function sample2(){
+document.getElementById("sample").value= document.getElementById("txtTypeIncidentCrime").value;
+sampleV = 2;
+}
+function sample3(){
+document.getElementById("sample").value= document.getElementById("txtTypeIncidentAccident").value;
+sampleV = 3;
+}
+function sample4(){
+document.getElementById("sample").value= document.getElementById("txtTypeIncidentMedicalAssistance").value;
+sampleV = 4;
+}
+function sample5(){
+document.getElementById("sample").value= document.getElementById("txtother").value;
+sampleV = 5;
+}
+
+function sample6(){
+	if(sampleV==1){
+	Rincident = "disaster";
+	sample();
+	}else if(sampleV==2){
+	
+	Rincident = "crime";
+	sample2();
+	}else if(sampleV==3){
+	
+	Rincident = "accident";
+	sample3();
+	}else if(sampleV==4){
+	Rincident = "medical";
+	sample4();
+	}else if(sampleV==5){
+	Rincident = "other";
+	sample5();
+	}
+}
+//end select
+
+
+
+
+function rad2(){
+}
+
+var geocoder = new google.maps.Geocoder();
+
+  var gg;
+  var gg1;
+function geocodePosition(pos) {
+  geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+    if (responses && responses.length > 0) {
+      updateMarkerAddress(responses[0].formatted_address);
+    } else {
+      updateMarkerAddress('Cannot determine address at this location.');
+    }
+  });
+}
+
+function updateMarkerStatus(str) {
+  document.getElementById('markerStatus').innerHTML = str;
+}
+
+function updateMarkerPosition(latLng) {
+  document.getElementById('info2').innerHTML = [
+    latLng.lat(),
+    latLng.lng()
+  ].join(', ');
+}
+
+function updateMarkerAddress(str) {
+  loc2 = str;
+}
+
+ function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.watchPosition(showPosition);
+    }
+  else{}
+  }
+function showPosition(position)
+  {
+	
+  gg =position.coords.latitude ;
+ gg1 =  position.coords.longitude;
+  
+  
+  long2 =position.coords.latitude;
+  lat2= position.coords.longitude;
+window.localStorage.setItem("longlat",long2);
+
+window.localStorage.setItem("lat",lat2);
+initialize();
+
+  }
+
+function initialize() {
+
+  
+  var latLng = new google.maps.LatLng(gg,gg1);
+ 
+ var map = new google.maps.Map(document.getElementById('mapCanvas'), {
+    zoom: 12,
+    center: latLng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+  var marker = new google.maps.Marker({
+    position: latLng,
+    title: 'Point A',
+    map: map,
+    draggable: true
+  });
+
+ 
+  
+  // Update current position info.
+  updateMarkerPosition(latLng);
+  geocodePosition(latLng);
+
+  // Add dragging event listeners.
+  google.maps.event.addListener(marker, 'dragstart', function() {
+    updateMarkerAddress('Dragging...');
+  });
+
+  google.maps.event.addListener(marker, 'drag', function() {
+    updateMarkerStatus('Dragging...');
+    updateMarkerPosition(marker.getPosition());
+  });
+
+  google.maps.event.addListener(marker, 'dragend', function() {
+    updateMarkerStatus('Drag ended');
+    geocodePosition(marker.getPosition());
+  });
+}
+
+
+
+
+           function next1(){
+		   skip2 += 1;
+		   $( "#div1" ).slideToggle("fast");
+		   $( "#div2" ).slideToggle("fast");
+			}
+			
+			    function next2(){
+			sample6();
+			incidentV = document.getElementById("sample").value;
+			factV  = document.getElementById("txtFactsIncident").value;
+			name55 = window.localStorage.getItem('dataemail');
+
+			pic1 =  document.getElementById("info33").innerHTML;
+		
+		 document.getElementById("pname").innerHTML ="By: " + name55;
+		 
+		 document.getElementById("pRincedent").innerHTML ="Incident: " + Rincident;
+		 document.getElementById("pincedent").innerHTML ="Type of Incident: " + incidentV;
+		 document.getElementById("pfact").innerHTML ="Fact of Incident: " + factV;
+		
+		 document.getElementById("hidlat").value = window.localStorage.getItem('lat');
+
+		 	   skip2 += 1;
+	
+		 $( "#div2" ).slideToggle("fast");
+		   $( "#div3" ).slideToggle("fast");
+	
+	}
+			
+			
+			 function next3(){
+		
+		 	   skip2 += 1;
+		
+		     $( "#div4" ).slideToggle("fast");
+		   $( "#div3" ).slideToggle("fast");
+			 
+		   
+		    
+var pic = pic1;	
+ address2 = loc2;
+loc2 = "";
+lat2 = document.getElementById("hidlat").value;
+
+				$.ajax({
+					url: "http://iligtas.ph/sosmnl/addreport.php",
+					type: "POST",
+					data: {"txtIncident":Rincident,"txtPhotoIncident":pic,"txtDisplayUser":name55,"txtDateTime":date2,"txtTypeIncident":incidentV,"txtFactsIncident":factV,"txtlong":long2,"txtlat2":lat2},
+					success:function(data){
+						$("#ew").html(data);
+		
+	}
+	});	
+		   
+			}
+			
+				function lipatback(){
+				
+				if(skip2==0){
+	lipat();
+	
+	}else if(skip2==1){
+
+	
+		   $( "#div1" ).slideToggle("fast");
+		   $( "#div2" ).slideToggle("fast");
+
+	skip2 -= 1;
+	}else if(skip2==2){
+	
+	
+	
+		 $( "#div2" ).slideToggle("fast");
+		   $( "#div3" ).slideToggle("fast");
+	
+	skip2 -= 1;
+	}else if(skip2==3){
+	
+		
+		     $( "#div4" ).slideToggle("fast");
+		   $( "#div3" ).slideToggle("fast");
+	
+	skip2 -= 1;
+	}
+				
+				
+				
+				}
+			
+			
+			
+        </script>
+    </body>
+</html>

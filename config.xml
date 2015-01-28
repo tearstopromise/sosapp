@@ -39,6 +39,9 @@
  
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
  
+ 
+ <plugin name="PushNotification" value="com.pushwoosh.test.plugin.pushnotifications.PushNotifications" onload="true"/>
+ 
     <!-- universal preferences -->
     <preference name="phonegap-version"           value="3.5.0" />         
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
