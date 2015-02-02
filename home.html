@@ -63,9 +63,7 @@
 		display: block;
 		left: 85%;
 	}
-	br {
-  line-height: 250%;
-}
+
       </style>
     </head>
     <body>
@@ -149,24 +147,15 @@
 	<legend>Choose an Incident:</legend>
 	
 	<div class="ui-grid-a">
-    <div class="ui-block-a"><div >
+	
+	
+    <div class="ui-block-a">
 		<input onClick="radio6a();" type="radio" name="txtIncident" id="radio-choice-h-6a" value="disaster">
 			<label for="radio-choice-h-6a">Disaster</label>
-		<input onClick="radio6b();" type="radio" name="txtIncident" id="radio-choice-h-6b" value="accident">
-			<label for="radio-choice-h-6b">Accident</label>
-		<input onClick="radio6c();" type="radio" name="txtIncident" id="radio-choice-h-6c" value="crime">
-			<label for="radio-choice-h-6c">Crime</label>
-		<input onClick="radio6d();" type="radio" name="txtIncident" id="radio-choice-h-6d" value="medical">
-			<label for="radio-choice-h-6d">Medical</label>
-		<input onClick="radio6e();" type="radio" name="txtIncident" id="radio-choice-h-6e" value="other">
-			<label for="radio-choice-h-6e">Other</label>
-	<!--</fieldset>-->
+			</div>
+			<div class="ui-block-b">
 	
 	
-	</div></div>
-    <div class="ui-block-b"><div >
-	
-	<div id="spaceadder"></div>
 	<div id="divSelectDisaster" onClick="sample();" style="display:none;" >
 	<select  name="txtTypeIncident" id="txtTypeIncidentDisaster2" data-native-menu="false">
 	    <option >Select Disaster Type</option>
@@ -178,6 +167,31 @@
 		<option   value="Mitigate">Mitigate</option>
 	</select>
 	</div>
+		</div>	
+			
+	<div class="ui-block-a">
+		<input onClick="radio6b();" type="radio" name="txtIncident" id="radio-choice-h-6b" value="accident">
+			<label for="radio-choice-h-6b">Accident</label>
+			</div>
+			
+			<div class="ui-block-b">
+	<div id="divSelectAccident" onClick="sample3();" style="display:none;" >
+	<select name="txtTypeIncident" id="txtTypeIncidentAccident" data-native-menu="false">
+	    <option> Select Accident Type</option>
+	    <option value="Car Accident">Car Accident</option>
+	    <option value="Motorcycle Accident">Motorcycle Accident</option>
+	    <option value="Others">Others</option>
+	</select>
+	</div>
+</div>
+			
+
+	<div class="ui-block-a">
+		<input onClick="radio6c();" type="radio" name="txtIncident" id="radio-choice-h-6c" value="crime">
+			<label for="radio-choice-h-6c">Crime</label>
+	</div>
+	
+	 <div class="ui-block-b">
 	
 	<div id="divSelectCrime" onClick="sample2();" style="display:none;" >
 	<select name="txtTypeIncident" id="txtTypeIncidentCrime" data-native-menu="false">
@@ -195,16 +209,16 @@
 		<option value="Theft">Theft</option>
 	</select>
 	</div>
-
-	<div id="divSelectAccident" onClick="sample3();" style="display:none;" >
-	<select name="txtTypeIncident" id="txtTypeIncidentAccident" data-native-menu="false">
-	    <option> Select Accident Type</option>
-	    <option value="Car Accident">Car Accident</option>
-	    <option value="Motorcycle Accident">Motorcycle Accident</option>
-	    <option value="Others">Others</option>
-	</select>
+</div>
+	
+	
+	<div class="ui-block-a">
+		<input onClick="radio6d();" type="radio" name="txtIncident" id="radio-choice-h-6d" value="medical">
+			<label for="radio-choice-h-6d">Medical</label>
 	</div>
-
+	
+	
+	<div class="ui-block-b">
 	<div id="divSelectMedicalAssistance" onClick="sample4();" style="display:none;">
 	<select name="txtTypeIncident" id="txtTypeIncidentMedicalAssistance" data-native-menu="false">
 	    <option>Select Med Assist Type</option>
@@ -217,11 +231,27 @@
 	<option value="Others">Others</option>
 	</select>
 	</div>
+	</div>
 	
 	
+	<div class="ui-block-a">
+		<input onClick="radio6e();" type="radio" name="txtIncident" id="radio-choice-h-6e" value="other">
+			<label for="radio-choice-h-6e">Other</label>
+	<!--</fieldset>-->
+	</div>
+	
+	
+	
+    
+	
+	
+
+
+	<div class="ui-block-b">
 	<input type="text" onchange="sample5();" name="txtother" id="txtother" style="display:none;"  placeholder="Other" />
-   
-	</div></div>
+   </div>
+	</div>
+	
 </div><!-- /grid-a -->
 	
  <label for="txtFactsIncident">Facts of incident:</label>
@@ -650,14 +680,14 @@ function radio6d(){
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).show("fast");
 		  $( "#txtother" ).hide("fast");
-			$("#spaceadder").html("<br/><br/><br/><br/><br/><br/><br/><br/>");
+			$("#spaceadder").html("<br/><br/><br/><br/><br/><br/><br/><br/><br/>");
 		  }
 function radio6e(){
 		  $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-		  $("#spaceadder").html("<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>");
+		  $("#spaceadder").html("<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>");
 		  $( "#txtother" ).show("fast");
 }
 
