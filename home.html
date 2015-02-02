@@ -247,9 +247,9 @@
 	
 
 
-	<div class="ui-block-b">
-	<input type="text" onchange="sample5();" name="txtother" id="txtother" style="display:none;"  placeholder="Other" />
-   </div>
+        <div class="ui-block-b" id ="otherhider" style="display:none;">
+            <input type="text" onchange="sample5();" name="txtother" id="txtother" placeholder="Other" />
+        </div>
 	</div>
 	
 </div><!-- /grid-a -->
@@ -654,16 +654,17 @@ function radio6a(){
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-		  $( "#txtother" ).hide("fast");
-		  $("#spaceadder").html("");
+	
+		  $("#otherhider").hide("fast");
 }
 function radio6b(){
 		    $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).show("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-		  $( "#txtother" ).hide("fast");
-		  $("#spaceadder").html("<br/><br/><br/>");
+	
+		
+		  $("#otherhider").hide("fast");
 		  
 }
 function radio6c(){
@@ -671,24 +672,26 @@ function radio6c(){
 		   $( "#divSelectCrime" ).show("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-		  $( "#txtother" ).hide("fast");
-		  $("#spaceadder").html("<br/><br/><br/><br/><br/><br/>");
+	
+		  $("#otherhider").hide("fast");
+        
 }
 function radio6d(){
 		  $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).show("fast");
-		  $( "#txtother" ).hide("fast");
-			$("#spaceadder").html("<br/><br/><br/><br/><br/><br/><br/><br/><br/>");
+
+		  $("#otherhider").hide("fast");
 		  }
 function radio6e(){
 		  $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-		  $("#spaceadder").html("<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>");
-		  $( "#txtother" ).show("fast");
+
+		  $( "#otherhider" ).show("fast");
+
 }
 
 
