@@ -130,7 +130,7 @@
 		
 	</div><!-- /header -->
 	
-<div role="main" class="ui-content">
+<div data-role="main" class="ui-content">
 
 	
 <div id="txtDisplayUser" ></div> <div id="txtDateTime"></div>
@@ -209,8 +209,8 @@
 	
 	
 	<input type="text" onchange="sample5();" name="txtother" id="txtother" style="display:none;"  placeholder="Other" />
-            <label for="txtFactsIncident">Facts of incident:</label>
-	<input type="text" name="txtFactsIncident" id="txtFactsIncident" />
+    <label for="txtFactsIncident" style="z-index:10000">Facts of incident:</label>
+    <input type="text" name="txtFactsIncident" id="txtFactsIncident" style="z-index:10000" />
 
 	<input type="submit" onClick="next2();" value="Send" id="submit" data-theme="d" />
 
