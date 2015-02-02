@@ -163,7 +163,7 @@
 	</div></div>
     <div class="ui-block-b"><div >
 	
-	
+	<div id="spaceadder"></div>
 	<div id="divSelectDisaster" onClick="sample();" style="display:none;" >
 	<select  name="txtTypeIncident" id="txtTypeIncidentDisaster2" data-native-menu="false">
 	    <option >Select Disaster Type</option>
@@ -622,6 +622,7 @@ function radio6a(){
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
 		  $( "#txtother" ).hide("fast");
+		  $("#spaceadder").html("");
 }
 function radio6b(){
 		    $( "#divSelectDisaster" ).hide("fast");
@@ -629,6 +630,8 @@ function radio6b(){
 		  $( "#divSelectAccident" ).show("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
 		  $( "#txtother" ).hide("fast");
+		  $("#spaceadder").html("<br/><br/><br/>");
+		  
 }
 function radio6c(){
 		  $( "#divSelectDisaster" ).hide("fast");
@@ -636,6 +639,7 @@ function radio6c(){
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
 		  $( "#txtother" ).hide("fast");
+		  $("#spaceadder").html("<br/><br/><br/><br/><br/><br/>");
 }
 function radio6d(){
 		  $( "#divSelectDisaster" ).hide("fast");
@@ -643,13 +647,14 @@ function radio6d(){
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).show("fast");
 		  $( "#txtother" ).hide("fast");
-}
+			$("#spaceadder").html("<br/><br/><br/><br/><br/><br/><br/><br/>");
+		  }
 function radio6e(){
 		  $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-		  
+		  $("#spaceadder").html("<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>");
 		  $( "#txtother" ).show("fast");
 }
 
