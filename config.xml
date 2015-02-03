@@ -50,5 +50,6 @@
    <preference name="fullscreen" value="false" />
    <preference name="android-windowSoftInputMode" value="stateVisible" />
    	<preference name="orientation" value="portrait" />
+	<uses-feature android:name="android.hardware.screen.portrait" />
     <!-- content src="http://www.w3.org/2010/05/video/mediaevents.html" / -->
 </widget>

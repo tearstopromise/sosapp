@@ -76,7 +76,8 @@ document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;
             destinationType: Camera.DestinationType.DATA_URL,
 			saveToPhotoAlbum: true,
 			targetWidth : 500,
-			targetHeight : 500 
+			targetHeight : 500 ,
+			correctOrientation: true
         });
 
     },
