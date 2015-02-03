@@ -131,7 +131,7 @@
        
                     <label for="pw" class="ui-hidden-accessible">Password:</label>
                     <input type="password" name="pass" id="verifypw" value="" placeholder="password" data-theme="a">
-                    <button id="verifybtn" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
+                    <button id="verifybtn" class="ui-btn ui-shadow ui-corner-all ui-icon- ui-btn-icon-left ui-btn-d">OK</button>
                 </div>
                 </div>
 
@@ -894,9 +894,10 @@ myname = window.localStorage.getItem('dataemail');
 	document.getElementById("verifypw").value="";
       }
       else {
-          alert("Wrong Password!");
 		$('#popupStop').hide();
 		document.getElementById("verifypw").value="";
+		
+          alert("Wrong Password!");
       }
 
   });
