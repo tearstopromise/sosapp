@@ -125,16 +125,15 @@
 		<center>	<label id="lugar1"></label></center>
 
         <div data-role="popup" id="popupStop" data-theme="a" class="ui-corner-all">
-            <form>
+          
                 <div style="padding:10px 20px;">
-                    <h3>Please sign in</h3>
+                    <h3>Please Input Password</h3>
        
                     <label for="pw" class="ui-hidden-accessible">Password:</label>
                     <input type="password" name="pass" id="verifypw" value="" placeholder="password" data-theme="a">
-                    <button id="veryfybtn" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
+                    <button id="verifybtn" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
                 </div>
-            </form>
-        </div>
+                </div>
 
 
 
@@ -853,7 +852,6 @@ myname = window.localStorage.getItem('dataemail');
   
 myname = window.localStorage.getItem('dataemail');
  
- 
 
 	timerId = window.setInterval(function(){
 	
@@ -867,29 +865,38 @@ myname = window.localStorage.getItem('dataemail');
 	}
 	});	
 	
-}, 5000);
+}, 30000);
 
 
   });
   
+
+
+  $("#panicpic2").click(function(){
+  $("#panicbutton").hide();
+  $("#panicbutton2").show();
+  $('#popupStop').show();
+  });
+
   
   $("#verifybtn").click(function () {
       var userpw = window.localStorage.getItem('datapassword');
-      var inputpw = $('#verifypw').val;
-
-      if (userpw == inputpw) {
+      var inputpw = document.getElementById("verifypw").value;
+ 
+    if (userpw == inputpw) {
 
 
           $("#panicbutton2").hide();
           $("#panicbutton").show();
 
           clearInterval(timerId);
-
-
+	$('#popupStop').hide();
+	document.getElementById("verifypw").value="";
       }
       else {
           alert("Wrong Password!");
-
+		$('#popupStop').hide();
+		document.getElementById("verifypw").value="";
       }
 
   });

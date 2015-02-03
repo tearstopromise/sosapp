@@ -16,25 +16,15 @@
    
 
     <!-- third party plugins -->
-    <gap:plugin name="org.apache.cordova.statusbar"/>
+
 
     <!-- core plugins -->
-    <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media-capture" />
-    <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.contacts" />
     <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.device-motion" />
-    <gap:plugin name="org.apache.cordova.device-orientation" />
     <gap:plugin name="org.apache.cordova.file" />
-    <gap:plugin name="org.apache.cordova.file-transfer" />
     <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.media" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="org.apache.cordova.vibration" />
 	<gap:plugin name="nl.x-services.plugins.toast" />
  
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
@@ -48,7 +38,6 @@
     <!--<preference name="fullscreen"                 value="true" /> -->          <!-- all: hides the status bar at the top of the screen -->
   
    <preference name="fullscreen" value="false" />
-   <preference name="android-windowSoftInputMode" value="stateVisible" />
    	<preference name="orientation" value="portrait" />
     <!-- content src="http://www.w3.org/2010/05/video/mediaevents.html" / -->
 </widget>
