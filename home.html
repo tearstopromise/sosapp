@@ -64,7 +64,12 @@
 		left: 85%;
 	}
 
-
+ #panicbutton2{
+		position: relative;
+		display: block;
+		left: 85%;
+	}
+	
 
       </style>
     </head>
@@ -95,8 +100,13 @@
 
 	<div role="main" class="ui-content">
 		<div id="panicbutton">
-		<a href="sms:+639461461134?body= I am in emergency situation, I need help."><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
+		
+		<a href="sms:+639461461134?body=I am in emergency situation, I need help." ><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
 		</div>
+		<div id="panicbutton2" style="display:none">
+            <a href="#popupStop" data-rel="popup" data-position-to="window" data-transition="pop"><img id="panicpic2" src="images/panicbutton_disabled.png" style="width: 15%;" /></a>
+		</div>
+		
 		<!--<p><a href="#two" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Personal Alarm</a></p>-->
 			
 	
@@ -113,6 +123,21 @@
 		<a id="btnCall" href="tel:09461461134" class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
 		
 		<center>	<label id="lugar1"></label></center>
+
+        <div data-role="popup" id="popupStop" data-theme="a" class="ui-corner-all">
+            <form>
+                <div style="padding:10px 20px;">
+                    <h3>Please sign in</h3>
+       
+                    <label for="pw" class="ui-hidden-accessible">Password:</label>
+                    <input type="password" name="pass" id="verifypw" value="" placeholder="password" data-theme="a">
+                    <button id="veryfybtn" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
+                </div>
+            </form>
+        </div>
+
+
+
 		</div><!-- /content -->
 
 	<!-- <div data-role="footer" data-theme="a" data-position="fixed">
@@ -276,7 +301,7 @@
 		   
 		   </div>
 
-</div><!-- /page two -->
+<!-- /page two -->
 
 
 <div data-role="page" id="four">
@@ -506,7 +531,7 @@ Report Sending Please Wait... </div>
    <script type="text/javascript">
 getLocation();
 pangdate();
-	
+	var timerId = 0;
 var incidentV ;
 			var factV;
 		
@@ -635,7 +660,7 @@ var d = new Date();
 document.getElementById('txtDateTime').innerHTML = "Date: " + d1.toDateString() +" "+ d;
 
 document.getElementById("txtDisplayUser").innerHTML ="Username: " + window.localStorage.getItem('dataemail');
-
+name55 = window.localStorage.getItem('dataemail');
 }
 
 
@@ -805,7 +830,7 @@ var pic = pic1;
 		   
 			}
 			
-			
+
 function reports1(){
 myname = window.localStorage.getItem('dataemail');
 				$.ajax({
@@ -820,10 +845,56 @@ myname = window.localStorage.getItem('dataemail');
 		   
 			}
 			
-$(document).ready(function(){
+
+			$(document).ready(function(){
   $("#panicpic").click(function(){
+  $("#panicbutton").hide();
+  $("#panicbutton2").show();
+  
+myname = window.localStorage.getItem('dataemail');
+ 
+ 
+
+	timerId = window.setInterval(function(){
+	
+				$.ajax({
+					url: "http://iligtas.ph/sosmnl/textalert.php",
+					type: "POST",
+					data: {"txtDisplayUser":myname,"txtDateTime":date2,"txtlong":long2,"txtlat2":lat2,"loc2":loc2},
+					success:function(data){
+						
+		
+	}
+	});	
+	
+}, 5000);
+
+
+  });
+  
+  
+  $("#verifybtn").click(function () {
+      var userpw = window.localStorage.getItem('datapassword');
+      var inputpw = $('#verifypw').val;
+
+      if (userpw == inputpw) {
+
+
+          $("#panicbutton2").hide();
+          $("#panicbutton").show();
+
+          clearInterval(timerId);
+
+
+      }
+      else {
+          alert("Wrong Password!");
+
+      }
+
   });
 });
+
 
 
 </script>
