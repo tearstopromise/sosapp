@@ -19,22 +19,9 @@
 -->
 <html>
 <head> 
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
-		
-      <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-      <script src="js/bootstrap.min.js"></script>
-	
-<!-- end ng code ko -->  
-	  
-	
-    
-<link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />
-	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-	
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="js/twitterfeed.js"></script>
+
+<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<script type="text/javascript" src="js/twitterfeed.js"></script>
 
 	  
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
@@ -70,7 +57,6 @@
       </style>
     </head>
     <body>
-
 
 <div data-role="page" id="one">
 <div data-role="panel" id="myPanel" data-display="overlay" data-swipe-close="true" data-theme="a">
@@ -182,11 +168,11 @@
 	
 	<div id="divSelectDisaster" onClick="sample();" style="display:none;" >
 	<select  name="txtTypeIncident" id="txtTypeIncidentDisaster2" data-native-menu="false">
-	Â Â Â Â <option >Select Disaster Type</option>
-	Â Â Â Â <option value="CBRN">CBRN</option>
-	Â Â Â Â <option value="Explosion">Explosion</option>
-	Â Â Â Â <option  value="Fire">Fire</option>
-	Â Â Â Â <option  value="Flooding">Flooding</option>
+	    <option >Select Disaster Type</option>
+	    <option value="CBRN">CBRN</option>
+	    <option value="Explosion">Explosion</option>
+	    <option  value="Fire">Fire</option>
+	    <option  value="Flooding">Flooding</option>
 		<option   value="Mitigate">Mitigate</option>
 	</select>
 	</div>
@@ -200,10 +186,10 @@
 			<div class="ui-block-b">
 	<div id="divSelectAccident" onClick="sample3();" style="display:none;" >
 	<select name="txtTypeIncident" id="txtTypeIncidentAccident" data-native-menu="false">
-	Â Â Â Â <option> Select Accident Type</option>
-	Â Â Â Â <option value="Car Accident">Car Accident</option>
-	Â Â Â Â <option value="Motorcycle Accident">Motorcycle Accident</option>
-	Â 
+	    <option> Select Accident Type</option>
+	    <option value="Car Accident">Car Accident</option>
+	    <option value="Motorcycle Accident">Motorcycle Accident</option>
+	 
 	</select>
 	</div>
 </div>
@@ -218,14 +204,14 @@
 	
 	<div id="divSelectCrime" onClick="sample2();" style="display:none;" >
 	<select name="txtTypeIncident" id="txtTypeIncidentCrime" data-native-menu="false">
-	Â Â Â Â <option>Select Crime Type</option>
+	    <option>Select Crime Type</option>
 		<option value="Abuse">Abuse</option>
-	Â Â Â Â <option value="Carjacking">Carjacking</option>
-	Â Â Â Â <option value="Carnapping">Carnapping</option>
+	    <option value="Carjacking">Carjacking</option>
+	    <option value="Carnapping">Carnapping</option>
 		<option value="GunShot">Gun Shot</option>
-	Â Â Â Â <option value="Homicide">Homicide</option>
+	    <option value="Homicide">Homicide</option>
 		<option value="IllegalDrugTrade">Illegal Drug Trade</option>
-	Â Â Â Â <option value="Murder">Murder</option>
+	    <option value="Murder">Murder</option>
 		<option value="PhysicalInjury">Physical Injury</option>
 		<option value="Rape">Rape</option>
 		<option value="Robbery">Robbery</option>
@@ -244,10 +230,10 @@
 	<div class="ui-block-b">
 	<div id="divSelectMedicalAssistance" onClick="sample4();" style="display:none;">
 	<select name="txtTypeIncident" id="txtTypeIncidentMedicalAssistance" data-native-menu="false">
-	Â Â Â Â <option>Select Med Assist Type</option>
-	Â Â Â Â <option value="Asthma">Asthma</option>
-	Â Â Â Â <option value="BrokenBone">Broken Bone</option>
-	Â Â Â Â <option value="Dengue">Dengue</option>
+	    <option>Select Med Assist Type</option>
+	    <option value="Asthma">Asthma</option>
+	    <option value="BrokenBone">Broken Bone</option>
+	    <option value="Dengue">Dengue</option>
 	<option value="EmergencyChildbirth">Emergency Childbirth</option>
 	<option value="HeartAttack">Heart Attack</option>
 	<option value="Poisoning">Poisoning</option>
@@ -517,13 +503,11 @@ Report Sending Please Wait... </div>
 
 
 <!-- code ko -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="childbrowser.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-		
-      <script src="js/jquery-1.10.2.min.js"></script>
-	  <script type="text/javascript" src="js/Toast.js"></script>
-   <script type="text/javascript">
+    <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/Toast.js"></script>
+	<script type="text/javascript">
 getLocation();
 pangdate();
 	var timerId = 0;
@@ -898,7 +882,6 @@ myname = window.localStorage.getItem('dataemail');
 
 
 </script>
-<!-- end code ko -->
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 
 </body>
