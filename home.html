@@ -20,10 +20,12 @@
 <html>
 <head> 
 
-<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
-<script type="text/javascript" src="js/twitterfeed.js"></script>
 
-	  
+  
+<link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />
+
+<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<script type="text/javascript" src="js/twitterfeed.js"></script>	  
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 	
 		 <style>
@@ -58,9 +60,9 @@
     </head>
     <body>
 
-<div data-role="page" id="one">
-<div data-role="panel" id="myPanel" data-display="overlay" data-swipe-close="true" data-theme="a">
-    		<ul data-role="listview" data-icon="false" data-theme="a">
+<div data-role="page" id="one" data-theme="d">
+<div data-role="panel" id="myPanel" data-display="overlay" data-swipe-close="true" data-theme="d">
+    		<ul data-role="listview" data-icon="false" data-theme="d">
 			
 			
 	        <li data-role="list-divider" data-theme="">MENU</li>  
@@ -69,7 +71,7 @@
 
 	          <li><a href="#myreports" onClick="reports1()" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-info">My Reports</a></li>  			  
 	          
-			<li><a href="javascript:logoutaccount();" class="ui-btn ui-shadow ui-btn-icon-right ui-icon-action">Logout</a></li>
+			<li><a href="javascript:logoutaccount();" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-action">Logout</a></li>
 			
 						
 			</ul>
@@ -95,7 +97,7 @@
 	<a    href="#both" data-rel="popup" data-transition="fade" data-position-to="window"><img src="images/logo-small.png"  id="myLogo" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
 		
 		
-		<div id="both" data-role="popup" data-theme="a" data-overlay-theme="b">
+		<div id="both" data-role="popup" data-theme="d" data-overlay-theme="b">
   		<center>	
 		<a   id="camera" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
 		<a   id="camera2" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
@@ -104,17 +106,17 @@
 		</div>
 	
 	
-		<a id="btnCall" href="tel:09461461134" class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
+		<a id="btnCall" href="tel:09461461134"  class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
 		
 		<center>	<label id="lugar1"></label></center>
 
-        <div data-role="popup" id="popupStop" data-theme="a" class="ui-corner-all">
+        <div data-role="popup" id="popupStop" data-theme="d" class="ui-corner-all">
           
                 <div style="padding:10px 20px;">
                     <h3>Please Input Password</h3>
        
                     <label for="pw" class="ui-hidden-accessible">Password:</label>
-                    <input type="password" name="pass" id="verifypw" value="" placeholder="password" data-theme="a">
+                    <input type="password" name="pass" id="verifypw" value="" placeholder="password" data-theme="d">
                     <button id="verifybtn" class="ui-btn ui-shadow ui-corner-all ui-icon- ui-btn-icon-left ui-btn-d">OK</button>
                 </div>
                 </div>
@@ -123,7 +125,7 @@
 
 		</div><!-- /content -->
 
-	<!-- <div data-role="footer" data-theme="a" data-position="fixed">
+	<!-- <div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div>/footer -->
 </div><!-- /page one -->
@@ -134,7 +136,7 @@
 <!-- Start of second page: #two -->
 
 
-<div data-role="page" id="two" data-theme="a">
+<div data-role="page" id="two" data-theme="d">
 <div data-role="header">
     <a href="#one" class="ui-btn ui-icon-back ui-btn-icon-notext" style="padding:0;border:0;background:transparent;"></a><h1>Report Incident </h1>
     <a href="" onclick="lipat();" class="ui-btn ui-icon-home ui-btn-icon-notext" style="padding:0;border:0;background:transparent;"></a>
@@ -285,7 +287,7 @@
 <!-- /page two -->
 
 
-<div data-role="page" id="four">
+<div data-role="page" id="four" data-theme="d">
 
 
 
@@ -322,7 +324,7 @@
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -333,7 +335,7 @@
 
 
 
-<div data-role="page" id="five">
+<div data-role="page" id="five" data-theme="d">
 
 
 
@@ -356,7 +358,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -369,7 +371,7 @@ Report Sending Please Wait... </div>
 
 
 
-<div data-role="page" id="myreports">
+<div data-role="page" id="myreports" data-theme="d">
 
 	<div data-role="header">
 	
@@ -394,7 +396,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -407,7 +409,7 @@ Report Sending Please Wait... </div>
 
 
 
-<div data-role="page" id="three">
+<div data-role="page" id="three" data-theme="d">
 
 
 
@@ -422,7 +424,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -443,7 +445,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -494,7 +496,7 @@ Report Sending Please Wait... </div>
 </div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
