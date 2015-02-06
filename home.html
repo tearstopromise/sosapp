@@ -24,6 +24,7 @@
   
 <link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />
 
+
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 <script type="text/javascript" src="js/twitterfeed.js"></script>	  
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
@@ -94,14 +95,21 @@
 		<!--<p><a href="#two" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Personal Alarm</a></p>-->
 			
 	
-	<a    href="#both" data-rel="popup" data-transition="fade" data-position-to="window"><img src="images/logo-small.png"  id="myLogo" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
-		
+	<a href="#both" data-rel="popup" data-transition="fade"  id="logo1" data-position-to="window"><img src="images/logo-small.png"  id="myLogo1" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
+		<a href="#both" data-rel="popup" data-transition="fade"  style="display:none"  id="logo1-hover" data-position-to="window"><img src="images/logo-small-press.png"   id="myLogo1" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
+	
 		
 		<div id="both" data-role="popup" data-theme="d" data-overlay-theme="b">
   		<center>	
-		<a   id="camera" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
-		<a   id="camera2" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
-		</center>
+		<a   id="camera" class="logo2" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
+			<a   class="logo2-hover"  style="display:none"  ><img src="images/logo-camera-press.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
+		
+		<a   id="camera2" class="logo3" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
+		<a  class="logo3-hover"  style="display:none" ><img src="images/logo-album-press.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
+		
+		
+		
+</center>
 
 		</div>
 	
@@ -138,7 +146,7 @@
 
 <div data-role="page" id="two" data-theme="d">
 <div data-role="header">
-    <a href="#one" class="ui-btn ui-icon-back ui-btn-icon-notext" style="padding:0;border:0;background:transparent;"></a><h1>Report Incident </h1>
+    <a href=""  onclick="lipat();" class="ui-btn ui-icon-back ui-btn-icon-notext" style="padding:0;border:0;background:transparent;"></a><h1>Report Incident </h1>
     <a href="" onclick="lipat();" class="ui-btn ui-icon-home ui-btn-icon-notext" style="padding:0;border:0;background:transparent;"></a>
 		
 	</div><!-- /header -->
@@ -752,7 +760,7 @@ window.location.replace("home.html");
 }
 
 function Back1(){
-window.location.replace("#one");
+window.location.replace("home.html");
 }
 function Back2(){
 window.location.replace("#two");
@@ -881,7 +889,72 @@ myname = window.localStorage.getItem('dataemail');
       }
 
   });
+  
+  
+  
+     $("#logo1").hover(function(){
+	
+	$('#logo1').hide();
+	$('#logo1-hover').show();
+	 },function(){
+
+    });
+	
+	 $("#logo1-hover").hover(function(){
+	
+	$('#logo1').hide();
+	$('#logo1-hover').show();
+	 },function(){
+	$('#logo1-hover').hide();
+	
+	$('#logo1').show();
+    });
+	
+	
+	
+	
+	     $(".logo2").hover(function(){
+	
+	$('.logo2').hide();
+	$('.logo2-hover').show();
+	 },function(){
+
+    });
+	
+	 $(".logo2-hover").hover(function(){
+	
+	$('.logo2').hide();
+	$('.logo2-hover').show();
+	 },function(){
+	$('.logo2-hover').hide();
+	
+	$('.logo2').show();
+    });
+	
+	
+	    $(".logo3").hover(function(){
+	
+	$('.logo3').hide();
+	$('.logo3-hover').show();
+	 },function(){
+
+    });
+	
+	 $(".logo3-hover").hover(function(){
+	
+	$('.logo3').hide();
+	$('.logo3-hover').show();
+	 },function(){
+	$('.logo3-hover').hide();
+	
+	$('.logo3').show();
+    });
+	
+
+	
 });
+
+
 
 
 
