@@ -96,8 +96,7 @@
 			
 	
 	<a href="#both" data-rel="popup" data-transition="fade"  id="logo1" data-position-to="window"><img src="images/logo-small.png"  id="myLogo1" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
-		<a href="#both" data-rel="popup" data-transition="fade"  style="display:none"  id="logo1-hover" data-position-to="window"><img src="images/logo-small-press.png"   id="myLogo1" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
-	
+		
 		
 		<div id="both" data-role="popup" data-theme="d" data-overlay-theme="b">
   		<center>	
@@ -754,7 +753,7 @@ window.location.replace("home.html");
 }
 
 function Back1(){
-window.location.replace("#home.html");
+window.location.replace("home.html");
 }
 function Back2(){
 window.location.replace("#two");
@@ -886,17 +885,7 @@ myname = window.localStorage.getItem('dataemail');
   
   
   
-    
-	
-	 $("#logo1").hover(function(){
-	
-	$('#logo1').hide();
-	$('#logo1-hover').show();
-	 },function(){
-	$('#logo1-hover').hide();
-	
-	$('#logo1').show();
-    });
+   
 	
 });
 
