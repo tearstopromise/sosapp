@@ -101,15 +101,9 @@
 		
 		<div id="both" data-role="popup" data-theme="d" data-overlay-theme="b">
   		<center>	
-		<a   id="camera" class="logo2" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
-			<a   class="logo2-hover"  style="display:none"  ><img src="images/logo-camera-press.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
-		
-		<a   id="camera2" class="logo3" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
-		<a  class="logo3-hover"  style="display:none" ><img src="images/logo-album-press.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
-		
-		
-		
-</center>
+		<a   id="camera" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
+		<a   id="camera2" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
+		</center>
 
 		</div>
 	
@@ -760,7 +754,7 @@ window.location.replace("home.html");
 }
 
 function Back1(){
-window.location.replace("home.html");
+window.location.replace("#home.html");
 }
 function Back2(){
 window.location.replace("#two");
@@ -892,15 +886,9 @@ myname = window.localStorage.getItem('dataemail');
   
   
   
-     $("#logo1").hover(function(){
+    
 	
-	$('#logo1').hide();
-	$('#logo1-hover').show();
-	 },function(){
-
-    });
-	
-	 $("#logo1-hover").hover(function(){
+	 $("#logo1").hover(function(){
 	
 	$('#logo1').hide();
 	$('#logo1-hover').show();
@@ -909,48 +897,6 @@ myname = window.localStorage.getItem('dataemail');
 	
 	$('#logo1').show();
     });
-	
-	
-	
-	
-	     $(".logo2").hover(function(){
-	
-	$('.logo2').hide();
-	$('.logo2-hover').show();
-	 },function(){
-
-    });
-	
-	 $(".logo2-hover").hover(function(){
-	
-	$('.logo2').hide();
-	$('.logo2-hover').show();
-	 },function(){
-	$('.logo2-hover').hide();
-	
-	$('.logo2').show();
-    });
-	
-	
-	    $(".logo3").hover(function(){
-	
-	$('.logo3').hide();
-	$('.logo3-hover').show();
-	 },function(){
-
-    });
-	
-	 $(".logo3-hover").hover(function(){
-	
-	$('.logo3').hide();
-	$('.logo3-hover').show();
-	 },function(){
-	$('.logo3-hover').hide();
-	
-	$('.logo3').show();
-    });
-	
-
 	
 });
 
