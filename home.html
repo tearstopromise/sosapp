@@ -107,7 +107,7 @@
 	
 	
 		<a id="btnCall" href="tel:09461461134"  class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
-			<a id="btnDelete"   class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-d">Exit</a>
+			<a id="btnDelete" onClick="exitAppPopup();" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-d">Exit</a>
 		
 		<center>	<label id="lugar1"></label></center>
 
@@ -886,12 +886,16 @@ myname = window.localStorage.getItem('dataemail');
   
   
 
+
+ 
+
+ 
+	
+});
+
 document.addEventListener("backbutton", function() {
-            if ( $('.ui-page-active').attr('id') == 'one') {
                 exitAppPopup();
-            } else {
-                history.back();             
-            }
+        
         }, false);
 		
 		function exitAppPopup() {
@@ -907,13 +911,6 @@ document.addEventListener("backbutton", function() {
     );  
     return false;
 }
- 
-
- 
-	
-});
-
-
 		
 
 </script>
