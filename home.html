@@ -102,7 +102,7 @@
 	
 	
 		<a id="btnCall" href="tel:09461461134"  class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
-		
+			<a id="btnDelete" onClick="exitAppPopup();" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-d">Exit</a>
 		<center>	<label id="lugar1"></label></center>
 
         <div data-role="popup" id="popupStop" data-theme="d" class="ui-corner-all">
@@ -885,24 +885,15 @@ myname = window.localStorage.getItem('dataemail');
 });
 
 document.addEventListener("backbutton", function() {
-		window.plugins.toast.showLongBottom('Double tap to exit', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
-				
+           
+ alert("1");
+ exitAppPopup();
        
         }, false);
 		
 		function exitAppPopup() {
-    alert("2");
-	navigator.notification.confirm(
-          'Exit SOS City?'
-        , function(button) {
-              if (button == 2) {
-                  navigator.app.exitApp();
-              } 
-          }
-        , 'Exit'
-        , 'No,Yes'
-    );  
-    return false;
+app.exitApp();
+
 }
 		
 
