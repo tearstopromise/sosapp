@@ -5,7 +5,7 @@
     version     = "1.0">
 
 
-    <name>SOS Manila</name>
+    <name>SOS City</name>
     
     <content src="index.html"/>
     <icon src="icon.png" width="256" height="256" />
@@ -28,9 +28,6 @@
 	<gap:plugin name="nl.x-services.plugins.toast" />
  
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
- 
- 
- <plugin name="PushNotification" value="com.pushwoosh.test.plugin.pushnotifications.PushNotifications" onload="true"/>
  
     <!-- universal preferences -->
     <preference name="phonegap-version"           value="3.5.0" />         
