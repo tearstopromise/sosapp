@@ -884,10 +884,9 @@ myname = window.localStorage.getItem('dataemail');
   
 });
 
-/* document.addEventListener("backbutton", function() {
-           
- alert("1");
- exitAppPopup();
+document.addEventListener("backbutton", function() {
+		window.plugins.toast.showLongBottom('Double tap to exit', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+				
        
         }, false);
 		
@@ -906,7 +905,7 @@ myname = window.localStorage.getItem('dataemail');
     return false;
 }
 		
-*/
+
 </script>
 
 
