@@ -894,12 +894,15 @@ myname = window.localStorage.getItem('dataemail');
 });
 
 document.addEventListener("backbutton", function() {
-                exitAppPopup();
-        
+           
+ alert("1");
+ exitAppPopup();
+       
         }, false);
 		
 		function exitAppPopup() {
-    navigator.notification.confirm(
+    alert("2");
+	navigator.notification.confirm(
           'Exit SOS City?'
         , function(button) {
               if (button == 2) {
