@@ -831,10 +831,7 @@ myname = window.localStorage.getItem('dataemail');
   $("#panicbutton2").show();
   
 myname = window.localStorage.getItem('dataemail');
- 
-
-	timerId = window.setInterval(function(){
-	
+ 		alert('sent');
 				$.ajax({
 					url: "http://iligtas.ph/sosmnl/textalert.php",
 					type: "POST",
@@ -845,7 +842,21 @@ myname = window.localStorage.getItem('dataemail');
 	}
 	});	
 	
-}, 30000);
+	
+
+	timerId = window.setInterval(function(){
+			alert('sent');
+				$.ajax({
+					url: "http://iligtas.ph/sosmnl/textalert.php",
+					type: "POST",
+					data: {"txtDisplayUser":myname,"txtDateTime":date2,"txtlong":long2,"txtlat2":lat2,"loc2":loc2},
+					success:function(data){
+						
+		
+	}
+	});	
+	
+}, 60000);
 
 
   });
