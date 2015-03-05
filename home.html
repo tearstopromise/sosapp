@@ -19,7 +19,7 @@
 -->
 <html>
 <head> 
-
+ <meta name="viewport" content="width=device-width, user-scalable=no" />
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 
 	
@@ -85,20 +85,20 @@
 		<div id="panicbutton2" style="display:none">
             <a href="#popupStop" data-rel="popup" data-position-to="window" data-transition="pop"><img id="panicpic2" src="images/panicbutton_disabled.png" style="width: 15%;" /></a>
 		</div>
+
+	<center>
+	<a href="#both" data-role="button" style=" width:75%;" data-rel="popup" data-transition="fade"  id="logo1" data-position-to="window"><img src="images/logo-small.png"  id="myLogo1" style=" width:100%;"></a>
 		
-		<!--<p><a href="#two" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Personal Alarm</a></p>-->
-			
-	
-	<a href="#both" data-rel="popup" data-transition="fade"  id="logo1" data-position-to="window"><img src="images/logo-small.png"  id="myLogo1" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
-		
+	</center>
 		
 		<div id="both" data-role="popup" data-theme="d" data-overlay-theme="b">
 
 		 <div class="ui-grid-a">
 		  <div class="ui-block-a">
-		<a  data-role="button" data-corners="false" id="camera" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="width:100%" ></a>
+		<a  data-role="button" id="camera" onClick="next1();"  ><img src="images/logo-camera.png"  id="myLogo" style="width:100%" ></a>
 		</div>
-		 <div class="ui-block-b"><a  data-role="button" data-corners="false" id="camera2" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="width:100%"></a>
+		 <div class="ui-block-b">
+		 <a  data-role="button" id="camera2" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="width:100%"></a>
 
 
 	
@@ -151,8 +151,7 @@
 	<img src="" id="picc"  class="pic" style="margin-left: auto; width:100%; height:80%; margin-right: auto;"   />	
 	 
 <br>
-	<!--<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">-->
-	<legend>Choose an Incident:</legend>
+<legend>Choose an Incident:</legend>
 	
 	<div class="ui-grid-a">
 	
@@ -320,9 +319,7 @@
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="d" data-position="fixed">
-		<h4></h4>
-	</div><!-- /footer -->
+
 </div><!-- /page one -->
 
 
@@ -346,17 +343,16 @@
 
 <div id="ew">
 <center>
+<br><br>
  <img src="images/ajax-loader.gif"  />
+<br><br>
+Report Sending Please Wait... 
   </center>
-Report Sending Please Wait... </div>
-
-
+</div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="d" data-position="fixed">
-		<h4></h4>
-	</div><!-- /footer -->
+
 </div><!-- /page one -->
 
 
@@ -392,9 +388,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="d" data-position="fixed">
-		<h4></h4>
-	</div><!-- /footer -->
+
 </div><!-- /page one -->
 
 
@@ -420,9 +414,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="d" data-position="fixed">
-		<h4></h4>
-	</div><!-- /footer -->
+
 </div><!-- /page one -->
 
 
@@ -440,10 +432,7 @@ Report Sending Please Wait... </div>
 		<img src="images/construction.png" style="width:70%;margin-left:auto;margin-right:auto;display:block" />
 	</div><!-- /content -->
 
-	
-	<div data-role="footer" data-theme="d" data-position="fixed">
-		<h4></h4>
-	</div><!-- /footer -->
+
 </div><!-- /page one -->
 
 
@@ -491,26 +480,21 @@ Report Sending Please Wait... </div>
 	
 </div><!-- /content -->
 
-	
-	<div data-role="footer" data-theme="d" data-position="fixed">
-		<h4></h4>
-	</div><!-- /footer -->
+
 </div><!-- /page one -->
 
 
 
 
 <!-- code ko -->
-    <script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
     <script src="js/jquery-1.10.2.min.js"></script>
-
-	    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
-	<script type="text/javascript" src="js/Toast.js"></script>
-	
-	<script type="text/javascript" src="js/twitterfeed.js"></script>	
-<link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />  
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />  
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/Toast.js"></script>
+	<script type="text/javascript" src="js/twitterfeed.js"></script>	
 	
 	<script type="text/javascript">
 getLocation();
@@ -895,9 +879,6 @@ myname = window.localStorage.getItem('dataemail');
   });
   
 });
-
-
-		
 
 
 </script>
