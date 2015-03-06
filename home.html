@@ -500,10 +500,10 @@ Report Sending Please Wait...
 getLocation();
 pangdate();
 	var timerId = 0;
-var incidentV ;
-			var factV;
-		
-	   var name55;
+	var locinterval = 0;
+	var incidentV ;
+	var factV;
+	var name55;
 var loc2;
 var cat2 ;
 var cat22 ;
@@ -846,6 +846,11 @@ myname = window.localStorage.getItem('dataemail');
 
   });
   
+locinterval = window.setInterval(function(){
+
+getLocation();
+
+}, 30000);
 
 
   $("#panicpic2").click(function(){
